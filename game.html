@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="./css/game.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Snake Game</h1>
+        <span class="score">Score: 0</span>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <a href="index.html" class="active">Home</a>
+            <a href="game.html">Game</a>
+        </nav>
+        <div class="content">
+            <button class="menu-toggle">&#9776;</button> <!-- Toggle menu button -->
+        </div>
+        <div class="game">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        </div>
+    </div>
+    <script src="./script/game.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            menuToggle.addEventListener('click', function () {
+                sidebar.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
