@@ -89,38 +89,34 @@ footer {
         display: block;
     }
 }
-
-/* Project card styles */
-.project-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.skill {
     margin-bottom: 20px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
+    width: 50%; /* Each skill takes up half of the container width */
+    float: left; /* Float the skills to the left to create the two-column layout */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 0 10px; /* Add padding to create space between skills */
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card img {
+.progress {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 20px;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
 }
 
-.project-card .card-content {
-    padding: 20px;
+.progress-bar {
+    background-color: #4caf50; /* Green progress bar color */
+    color: #fff;
+    text-align: center;
+    line-height: 20px; /* Centering the text vertically */
+    border-radius: 5px;
+    width: 0; /* Start with zero width */
+    transition: width 1s ease-in-out; /* Add transition for smoother animation */
 }
 
-.project-card h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: black;
-}
-
-.project-card p {
-    color: #555;
-    font-size: 16px;
+@media screen and (max-width: 768px) {
+    .skill {
+        width: 100%; /* On smaller screens, each skill takes up full width */
+        float: none; /* Remove floating for single-column layout */
+    }
 }
