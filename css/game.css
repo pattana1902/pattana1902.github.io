@@ -37,7 +37,6 @@ header {
 }
 
 .content {
-    flex: 1;
     padding: 20px;
 }
 
@@ -51,6 +50,9 @@ header {
     margin: auto; /* Center the game horizontally and vertically */
     position: relative;
 }
+
+
+
 
 canvas {
     border: 5px solid blue;
@@ -70,6 +72,12 @@ canvas {
     top: 20px;
     left: 20px;
     z-index: 999;
+}
+
+@media screen and (min-width: 769px) {
+    .controls {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -101,5 +109,48 @@ canvas {
 
     .game {
         padding: 20px; /* Add padding to center canvas */
+    }
+
+    .controls {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        gap: 10px;
+    }
+    
+    .control-button {
+        width: 80px;
+        height: 80px;
+        background-color: #ccc;
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #upButton {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    #downButton {
+        grid-column: 2;
+        grid-row: 3;
+    }
+    
+    #leftButton {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    #rightButton {
+        grid-column: 3;
+        grid-row: 2;
     }
 }

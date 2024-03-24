@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
     <link rel="stylesheet" href="./css/game.css">
-
 </head>
 
 <body>
@@ -26,7 +25,12 @@
         </div>
         <div class="game">
             <canvas id="gameCanvas" width="400" height="400"></canvas>
-
+        </div>
+        <div class="controls">
+            <button id="upButton" class="control-button">Up</button>
+            <button id="downButton" class="control-button">Down</button>
+            <button id="leftButton" class="control-button">Left</button>
+            <button id="rightButton" class="control-button">Right</button>
         </div>
     </div>
     <script src="./script/game.js"></script>
@@ -39,6 +43,8 @@
                 sidebar.classList.toggle('active');
             });
         });
+
+      
     </script>
 </body>
 

@@ -10,6 +10,16 @@ let fruit;
 let scoreDisplay = document.querySelector('.score');
 
 
+const upButton = document.getElementById('upButton');
+const downButton = document.getElementById('downButton');
+const leftButton = document.getElementById('leftButton');
+const rightButton = document.getElementById('rightButton');
+
+upButton.addEventListener('click', () => moveSnake('Up'));
+downButton.addEventListener('click', () => moveSnake('Down'));
+leftButton.addEventListener('click', () => moveSnake('Left'));
+rightButton.addEventListener('click', () => moveSnake('Right'));
+
 (function setup() {
     snake = new Snake();
     fruit = new Fruit();
@@ -37,6 +47,10 @@ window.addEventListener('keydown', (event) => {
 
 function updateScore() {
     scoreDisplay.innerText = 'Score: ' + snake.total;
+}
+
+function moveSnake(direction) {
+    snake.changeDirection(direction);
 }
 
 function Snake() {
