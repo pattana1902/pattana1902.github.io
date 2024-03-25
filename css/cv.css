@@ -12,6 +12,21 @@ header {
     padding: 20px;
     text-align: center;
 }
+header img {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image round */
+    margin-bottom: 20px; /* Add space below the image */
+}
+
+.personal-info {
+    margin-bottom: 20px; /* Add space below the personal information */
+}
+
+.personal-info p {
+    margin: 5px 0; /* Adjust spacing for each personal info item */
+}
+
 
 footer {
     text-align: center;
