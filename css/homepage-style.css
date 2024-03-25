@@ -1,3 +1,4 @@
+/* Global styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -19,11 +20,13 @@ footer {
     background-color: #333;
 }
 
+/* Container */
 .container {
     display: flex;
     flex-direction: row;
 }
 
+/* Sidebar */
 .sidebar {
     width: 250px;
     background-color: #333; /* Dark sidebar background color */
@@ -44,6 +47,7 @@ footer {
     background-color: #555; /* Darker hover background color */
 }
 
+/* Content */
 .content {
     flex: 1;
     padding: 20px;
@@ -88,16 +92,29 @@ footer {
     .menu-toggle {
         display: block;
     }
+
+    /* Display project cards in vertical layout */
+    .show-projects {
+        flex-direction: column;
+        align-items: center; /* Center align cards horizontally */
+    }
+
+    /* Adjust spacing between project cards */
+    .show-projects .project-card {
+        margin-bottom: 20px;
+    }
 }
 
-/* Project card styles */
+/* Project card */
 .project-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-right: 20px;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
+    max-width: 300px;
+    flex: 0 0 auto;
 }
 
 .project-card:hover {
@@ -105,12 +122,12 @@ footer {
 }
 
 .project-card img {
-    max-width: 100%; 
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     max-height: 100%;
-    width: auto; 
-    height: auto; 
+    object-fit: cover;
 }
-
 
 .project-card .card-content {
     padding: 20px;
@@ -125,4 +142,16 @@ footer {
 .project-card p {
     color: #555;
     font-size: 16px;
+}
+
+/* Horizontal scrolling */
+.show-projects {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+/* Adjust spacing between project cards */
+.show-projects .project-card {
+    margin-right: 10px;
 }
