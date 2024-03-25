@@ -51,6 +51,7 @@ footer {
 .content {
     flex: 1;
     padding: 20px;
+    position: relative; /* Ensure relative positioning for absolute elements */
 }
 
 .menu-toggle {
