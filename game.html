@@ -9,23 +9,32 @@
 </head>
 
 <body>
+    <!-- Header section -->
     <header>
         <h1>Snake Game</h1>
         <span class="score">Score: 0</span>
     </header>
 
     <div class="container">
+        <!-- Sidebar navigation -->
         <nav class="sidebar">
             <a href="index.html" class="active">Home</a>
             <a href="#">Game</a>
             <a href="cv.html">Curriculum Vitae</a>
         </nav>
+
+        <!-- Content section -->
         <div class="content">
-            <button class="menu-toggle">&#9776;</button> <!-- Toggle menu button -->
+            <!-- Toggle menu button -->
+            <button class="menu-toggle">&#9776;</button>
         </div>
+
+        <!-- Game canvas -->
         <div class="game">
             <canvas id="gameCanvas" width="400" height="400"></canvas>
         </div>
+
+        <!-- Controls section -->
         <div class="controls">
             <button id="upButton" class="control-button">Up</button>
             <button id="downButton" class="control-button">Down</button>
@@ -33,18 +42,21 @@
             <button id="rightButton" class="control-button">Right</button>
         </div>
     </div>
+
+    <!-- Script files -->
     <script src="./script/game.js"></script>
     <script>
+        // Wait for the DOM content to be fully loaded before executing JavaScript code
         document.addEventListener('DOMContentLoaded', function () {
+            // Select the menu toggle button and sidebar elements
             const menuToggle = document.querySelector('.menu-toggle');
             const sidebar = document.querySelector('.sidebar');
 
+            // Add event listener to the menu toggle button to show/hide the sidebar
             menuToggle.addEventListener('click', function () {
                 sidebar.classList.toggle('active');
             });
         });
-
-      
     </script>
 </body>
 

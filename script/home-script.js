@@ -1,20 +1,24 @@
+// Wait for the DOM content to be fully loaded before executing JavaScript code
 document.addEventListener('DOMContentLoaded', function () {
+    // Select the menu toggle button, sidebar, typing text, and project section
     const menuToggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
     const typingText = document.getElementById('typing-text');
     const showProjectsSection = document.querySelector('.show-projects');
 
+    // Event listener for the menu toggle button to show/hide the sidebar
     menuToggle.addEventListener('click', function () {
         sidebar.classList.toggle('active');
     });
 
+    // Array containing project information
     const projects = [
-        { name: 'Arduino Robot Line Follower', description: 'This repository contains the code and resources for a line tracing robot built using an Arduino Nano, 4 sensors, and 2 motors. The robot is programmed to follow a line on the ground using the sensor inputs to adjust its movements.', imageUrl: '../images/Line Robot.webp', link: 'https://github.com/pattana1902/Arduino-Robot-Line-Follower-' },
-        { name: 'ESP32 Smart Door', description: 'This repository contains the code and resources for building a smart door system using an ESP32 microcontroller, fingerprint sensor, keypad, and relay module. The system allows users to unlock the door using either their registered fingerprints or a passcode entered on the keypad.', imageUrl: '../images/ESP32-Fingerprint-Lock.webp', link: 'https://github.com/pattana1902/ESP32-Smart-Door' },
-        { name: 'LIFF Line Collect Data ', description: 'LIFF applications are web apps integrated with the LINE messaging platform, allowing developers to create engaging experiences within the LINE app ecosystem.', imageUrl: '../images/screencapture-quickstart-liff-vescp7-stackblitz-io-2024-03-21-02_19_50.webp', link : 'https://github.com/pattana1902/LIFF-Line-Collect-Data?tab=readme-ov-file' }
-        // Add more projects as needed
+        { name: 'Arduino Robot Line Follower', description: 'This repository contains the code and resources for a line tracing robot built using an Arduino Nano, 4 sensors, and 2 motors.', imageUrl: '../images/Line Robot.webp', link: 'https://github.com/pattana1902/Arduino-Robot-Line-Follower-' },
+        { name: 'ESP32 Smart Door', description: 'This repository contains the code and resources for building a smart door system using an ESP32 microcontroller, fingerprint sensor, keypad, and relay module.', imageUrl: '../images/ESP32-Fingerprint-Lock.webp', link: 'https://github.com/pattana1902/ESP32-Smart-Door' },
+        { name: 'LIFF Line Collect Data ', description: 'LIFF applications are web apps integrated with the LINE messaging platform, allowing developers to create engaging experiences within the LINE app ecosystem.', imageUrl: '../images/screencapture-quickstart-liff-vescp7-stackblitz-io-2024-03-21-02_19_50.webp', link: 'https://github.com/pattana1902/LIFF-Line-Collect-Data?tab=readme-ov-file' }
     ];
 
+    // Function to create a project card element
     function createProjectCard(project) {
         const card = document.createElement('div');
         card.classList.add('project-card');
@@ -48,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return card;
     }
 
+    // Function to display projects on the webpage
     function displayProjects() {
         projects.forEach(project => {
             const projectCard = createProjectCard(project);
@@ -55,7 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Call the function to display projects
     displayProjects();
+
     // Function to simulate typing animation
     function typeEffect(element, speed) {
         const text = element.innerHTML;

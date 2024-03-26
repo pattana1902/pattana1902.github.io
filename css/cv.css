@@ -1,137 +1,227 @@
+/* Set base styles for the body */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Font family for the body text */
     margin: 0;
+    /* Remove default margin */
     padding: 0;
-    background-color: #1f1f1f; /* Dark background color */
-    color: #fff; /* Light text color */
-}
-
-header {
-    background-color: #333; /* Darker header background color */
+    /* Remove default padding */
+    background-color: #1f1f1f;
+    /* Dark background color */
     color: #fff;
+    /* Light text color */
+}
+
+/* Styles for the header */
+header {
+    background-color: #333;
+    /* Darker header background color */
+    color: #fff;
+    /* Light text color */
     padding: 20px;
+    /* Add padding around header content */
     text-align: center;
+    /* Center-align header content */
 }
+
+/* Styles for the profile image within the header */
 header img {
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Make the image round */
-    margin-bottom: 20px; /* Add space below the image */
+    width: 150px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 50%;
+    /* Make the image round */
+    margin-bottom: 20px;
+    /* Add space below the image */
 }
 
+/* Styles for the section containing personal information */
 .personal-info {
-    margin-bottom: 20px; /* Add space below the personal information */
+    margin-bottom: 20px;
+    /* Add space below the personal information */
 }
 
+/* Styles for paragraphs within the personal information section */
 .personal-info p {
-    margin: 5px 0; /* Adjust spacing for each personal info item */
+    margin: 5px 0;
+    /* Adjust spacing for each personal info item */
 }
 
-
+/* Styles for the footer */
 footer {
     text-align: center;
+    /* Center-align footer content */
     border: 5px solid #333;
+    /* Add border */
     background-color: #333;
+    /* Footer background color */
 }
 
+/* Styles for the main container */
 .container {
     display: flex;
+    /* Use flexbox for layout */
     flex-direction: row;
+    /* Arrange items horizontally */
 }
 
+/* Styles for the sidebar */
 .sidebar {
     width: 250px;
-    background-color: #333; /* Dark sidebar background color */
+    /* Set sidebar width */
+    background-color: #333;
+    /* Dark sidebar background color */
     padding: 20px;
+    /* Add padding inside the sidebar */
     height: 100vh;
+    /* Set sidebar height to full viewport height */
     overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds sidebar height */
 }
 
+/* Styles for sidebar links */
 .sidebar a {
     display: block;
+    /* Display links as block elements */
     color: #fff;
+    /* Link text color */
     text-decoration: none;
+    /* Remove default underline */
     padding: 10px 0;
+    /* Add padding above and below each link */
     transition: background-color 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
 }
 
+/* Hover styles for sidebar links */
 .sidebar a:hover {
-    background-color: #555; /* Darker hover background color */
+    background-color: #555;
+    /* Darker hover background color */
 }
 
+/* Styles for the main content area */
 .content {
     flex: 1;
+    /* Allow content area to grow and shrink */
     padding: 20px;
+    /* Add padding inside the content area */
 }
 
+/* Styles for the menu toggle button */
 .menu-toggle {
     display: none;
+    /* Hide menu toggle button by default */
     background: none;
+    /* Transparent background */
     border: none;
+    /* No border */
     font-size: 24px;
+    /* Set font size */
     color: #fff;
+    /* Text color */
     cursor: pointer;
+    /* Change cursor to pointer on hover */
     position: absolute;
+    /* Position relative to its containing block */
     top: 20px;
+    /* Distance from the top */
     left: 20px;
+    /* Distance from the left */
     z-index: 999;
+    /* Set a high z-index to ensure it's above other elements */
 }
 
+/* Media query for screens up to 768px wide */
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
+        /* Switch to a vertical layout */
     }
 
     .sidebar {
         width: 100%;
+        /* Take up full width */
         height: auto;
+        /* Automatically adjust height */
         display: none;
+        /* Hide sidebar by default */
         position: fixed;
+        /* Fix the position */
         left: 0;
+        /* Align to the left edge */
         top: 0;
-        background-color: #333; /* Dark sidebar background color */
+        /* Align to the top edge */
+        background-color: #333;
+        /* Dark sidebar background color */
     }
 
     .sidebar.active {
         display: block;
+        /* Display sidebar when active */
     }
 
     .content {
         margin-left: 0;
+        /* Remove left margin to avoid overlap with sidebar */
     }
 
     .menu-toggle {
         display: block;
+        /* Display menu toggle button */
     }
 }
+
+/* Styles for skill sections */
 .skill {
     margin-bottom: 20px;
-    width: 50%; /* Each skill takes up half of the container width */
-    float: left; /* Float the skills to the left to create the two-column layout */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    padding: 0 10px; /* Add padding to create space between skills */
+    /* Add space between skills */
+    width: 50%;
+    /* Each skill takes up half of the container width */
+    float: left;
+    /* Float the skills to the left to create the two-column layout */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+    padding: 0 10px;
+    /* Add padding to create space between skills */
 }
 
+/* Styles for progress bars */
 .progress {
     background-color: #ddd;
+    /* Light gray background color for progress bars */
     border-radius: 5px;
+    /* Rounded corners */
     height: 20px;
+    /* Set height for progress bars */
     width: 100%;
+    /* Set initial width for progress bars */
 }
 
+/* Styles for progress bar text */
 .progress-bar {
-    background-color: #4caf50; /* Green progress bar color */
+    background-color: #4caf50;
+    /* Green progress bar color */
     color: #fff;
+    /* Text color */
     text-align: center;
-    line-height: 20px; /* Centering the text vertically */
+    /* Center-align text */
+    line-height: 20px;
+    /* Center vertically */
     border-radius: 5px;
-    width: 0; /* Start with zero width */
-    transition: width 1s ease-in-out; /* Add transition for smoother animation */
+    /* Rounded corners */
+    width: 0;
+    /* Start with zero width */
+    transition: width 1s ease-in-out;
+    /* Add transition for smoother animation */
 }
 
+/* Media query for screens up to 768px wide */
 @media screen and (max-width: 768px) {
     .skill {
-        width: 100%; /* On smaller screens, each skill takes up full width */
-        float: none; /* Remove floating for single-column layout */
+        width: 100%;
+        /* Each skill takes up full width on smaller screens */
+        float: none;
+        /* Remove floating for single-column layout */
     }
 }

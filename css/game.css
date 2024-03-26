@@ -1,156 +1,249 @@
+/* Global styles */
 body {
     background-color: #f0f0f0;
+    /* Set background color */
     margin: 0;
+    /* Remove default margin */
     font-family: Arial, sans-serif;
+    /* Set font family */
 }
 
+/* Header styles */
 header {
     background-color: #333;
+    /* Dark header background color */
     color: #fff;
+    /* Header text color */
     padding: 20px;
+    /* Add padding around header content */
     text-align: center;
+    /* Center-align header content */
 }
 
+/* Container styles */
 .container {
     display: flex;
+    /* Use flexbox for layout */
     flex-direction: row;
+    /* Arrange items horizontally */
 }
 
+/* Sidebar styles */
 .sidebar {
     width: 250px;
+    /* Set sidebar width */
     background-color: #333;
+    /* Dark sidebar background color */
     padding: 20px;
+    /* Add padding inside the sidebar */
     height: 100vh;
+    /* Set sidebar height to full viewport height */
     overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds sidebar height */
 }
 
 .sidebar a {
     display: block;
+    /* Display links as block elements */
     color: #fff;
+    /* Link text color */
     text-decoration: none;
+    /* Remove default underline */
     padding: 10px 0;
+    /* Add padding above and below each link */
     transition: background-color 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
 }
 
 .sidebar a:hover {
     background-color: #555;
+    /* Darker hover background color */
 }
 
+/* Content styles */
 .content {
     padding: 20px;
+    /* Add padding inside the content area */
 }
 
+/* Game container styles */
 .game {
-    flex: 1; /* Take remaining space */
+    flex: 1;
+    /* Take remaining space */
     display: flex;
+    /* Use flexbox for layout */
     justify-content: center;
+    /* Center content horizontally */
     align-items: center;
-    max-width: 400px; /* Set max width for the game */
-    max-height: 400px; /* Set max height for the game */
-    margin: auto; /* Center the game horizontally and vertically */
+    /* Center content vertically */
+    max-width: 400px;
+    /* Set max width for the game */
+    max-height: 400px;
+    /* Set max height for the game */
+    margin: auto;
+    /* Center the game horizontally and vertically */
     position: relative;
+    /* Ensure relative positioning for absolute elements */
 }
 
-
-
-
+/* Canvas styles */
 canvas {
     border: 5px solid blue;
+    /* Add border around canvas */
     background-color: #000;
-    width: 100%; /* Ensure canvas fills the game container */
-    height: 100%; /* Ensure canvas fills the game container */
+    /* Set background color for canvas */
+    width: 100%;
+    /* Ensure canvas fills the game container */
+    height: 100%;
+    /* Ensure canvas fills the game container */
 }
 
+/* Menu toggle button styles */
 .menu-toggle {
     display: none;
+    /* Hide menu toggle button by default */
     background: none;
+    /* Transparent background */
     border: none;
+    /* No border */
     font-size: 24px;
+    /* Set font size */
     color: #fff;
+    /* Text color */
     cursor: pointer;
+    /* Change cursor to pointer on hover */
     position: absolute;
+    /* Position relative to its containing block */
     top: 20px;
+    /* Distance from the top */
     left: 20px;
+    /* Distance from the left */
     z-index: 999;
+    /* Set a high z-index to ensure it's above other elements */
 }
 
+/* Media query for screens larger than 768px */
 @media screen and (min-width: 769px) {
+
+    /* Hide controls for larger screens */
     .controls {
         display: none;
     }
 }
 
+/* Media query for screens up to 768px wide */
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
+        /* Switch to a vertical layout */
     }
 
     .sidebar {
         width: 100%;
+        /* Take up full width */
         height: auto;
+        /* Automatically adjust height */
         display: none;
+        /* Hide sidebar by default */
         position: fixed;
+        /* Fix the position */
         left: 0;
+        /* Align to the left edge */
         top: 0;
+        /* Align to the top edge */
         background-color: #333;
+        /* Dark sidebar background color */
     }
 
     .sidebar.active {
         display: block;
+        /* Display sidebar when active */
     }
 
     .content {
         margin-left: 0;
+        /* Remove left margin to avoid overlap with sidebar */
     }
 
     .menu-toggle {
         display: block;
+        /* Display menu toggle button */
     }
 
+    /* Center the game and controls vertically */
     .game {
-        padding: 20px; /* Add padding to center canvas */
+        padding: 20px;
+        /* Add padding to center canvas */
     }
 
+    /* Styles for game controls */
     .controls {
         display: grid;
+        /* Use grid layout for controls */
         grid-template-columns: auto auto auto;
+        /* Set columns */
         grid-template-rows: auto auto auto;
+        /* Set rows */
         justify-content: center;
+        /* Center content horizontally */
         align-items: center;
+        /* Center content vertically */
         margin-top: 20px;
+        /* Add margin to the top */
         gap: 10px;
+        /* Set gap between items */
     }
-    
+
+    /* Styles for game control buttons */
     .control-button {
         width: 80px;
+        /* Set button width */
         height: 80px;
+        /* Set button height */
         background-color: #ccc;
+        /* Button background color */
         border: none;
+        /* No border */
         border-radius: 50%;
+        /* Make button round */
         font-size: 24px;
+        /* Set font size */
         cursor: pointer;
+        /* Change cursor to pointer on hover */
         display: flex;
+        /* Use flexbox for layout */
         justify-content: center;
+        /* Center content horizontally */
         align-items: center;
+        /* Center content vertically */
     }
-    
+
+    /* Positioning for control buttons */
     #upButton {
         grid-column: 2;
+        /* Place in the middle column */
         grid-row: 1;
+        /* Place in the first row */
     }
-    
+
     #downButton {
         grid-column: 2;
+        /* Place in the middle column */
         grid-row: 3;
+        /* Place in the third row */
     }
-    
+
     #leftButton {
         grid-column: 1;
+        /* Place in the first column */
         grid-row: 2;
+        /* Place in the second row */
     }
-    
+
     #rightButton {
         grid-column: 3;
+        /* Place in the third column */
         grid-row: 2;
+        /* Place in the second row */
     }
 }

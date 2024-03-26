@@ -1,158 +1,241 @@
 /* Global styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Set font family for the body */
     margin: 0;
+    /* Remove default margin */
     padding: 0;
-    background-color: #1f1f1f; /* Dark background color */
-    color: #fff; /* Light text color */
-}
-
-header {
-    background-color: #333; /* Darker header background color */
+    /* Remove default padding */
+    background-color: #1f1f1f;
+    /* Dark background color */
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    /* Light text color */
 }
 
+/* Header styles */
+header {
+    background-color: #333;
+    /* Darker header background color */
+    color: #fff;
+    /* Light text color */
+    padding: 20px;
+    /* Add padding around header content */
+    text-align: center;
+    /* Center-align header content */
+}
+
+/* Footer styles */
 footer {
     text-align: center;
+    /* Center-align footer content */
     border: 5px solid #333;
+    /* Add border */
     background-color: #333;
+    /* Footer background color */
 }
 
-/* Container */
+/* Container styles */
 .container {
     display: flex;
+    /* Use flexbox for layout */
     flex-direction: row;
+    /* Arrange items horizontally */
 }
 
-/* Sidebar */
+/* Sidebar styles */
 .sidebar {
     width: 250px;
-    background-color: #333; /* Dark sidebar background color */
+    /* Set sidebar width */
+    background-color: #333;
+    /* Dark sidebar background color */
     padding: 20px;
+    /* Add padding inside the sidebar */
     height: 100vh;
+    /* Set sidebar height to full viewport height */
     overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds sidebar height */
 }
 
 .sidebar a {
     display: block;
+    /* Display links as block elements */
     color: #fff;
+    /* Link text color */
     text-decoration: none;
+    /* Remove default underline */
     padding: 10px 0;
+    /* Add padding above and below each link */
     transition: background-color 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
 }
 
 .sidebar a:hover {
-    background-color: #555; /* Darker hover background color */
+    background-color: #555;
+    /* Darker hover background color */
 }
 
-/* Content */
+/* Content styles */
 .content {
     flex: 1;
+    /* Allow content area to grow and shrink */
     padding: 20px;
-    position: relative; /* Ensure relative positioning for absolute elements */
+    /* Add padding inside the content area */
+    position: relative;
+    /* Ensure relative positioning for absolute elements */
 }
 
+/* Menu toggle button styles */
 .menu-toggle {
     display: none;
+    /* Hide menu toggle button by default */
     background: none;
+    /* Transparent background */
     border: none;
+    /* No border */
     font-size: 24px;
+    /* Set font size */
     color: #fff;
+    /* Text color */
     cursor: pointer;
+    /* Change cursor to pointer on hover */
     position: absolute;
+    /* Position relative to its containing block */
     top: 20px;
+    /* Distance from the top */
     left: 20px;
+    /* Distance from the left */
     z-index: 999;
+    /* Set a high z-index to ensure it's above other elements */
 }
 
+/* Media query for screens up to 768px wide */
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
+        /* Switch to a vertical layout */
     }
 
     .sidebar {
         width: 100%;
+        /* Take up full width */
         height: auto;
+        /* Automatically adjust height */
         display: none;
+        /* Hide sidebar by default */
         position: fixed;
+        /* Fix the position */
         left: 0;
+        /* Align to the left edge */
         top: 0;
-        background-color: #333; /* Dark sidebar background color */
+        /* Align to the top edge */
+        background-color: #333;
+        /* Dark sidebar background color */
     }
 
     .sidebar.active {
         display: block;
+        /* Display sidebar when active */
     }
 
     .content {
         margin-left: 0;
+        /* Remove left margin to avoid overlap with sidebar */
     }
 
     .menu-toggle {
         display: block;
+        /* Display menu toggle button */
     }
 
     /* Display project cards in vertical layout */
     .show-projects {
         flex-direction: column;
-        align-items: center; /* Center align cards horizontally */
+        /* Arrange items vertically */
+        align-items: center;
+        /* Center align cards horizontally */
     }
 
     /* Adjust spacing between project cards */
     .show-projects .project-card {
         margin-bottom: 20px;
+        /* Add space below each card */
     }
 }
 
-/* Project card */
+/* Project card styles */
 .project-card {
     background-color: #fff;
+    /* Card background color */
     border-radius: 10px;
+    /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add shadow */
     margin-right: 20px;
+    /* Add space between cards */
     overflow: hidden;
+    /* Hide overflow content */
     transition: transform 0.3s ease-in-out;
+    /* Smooth transition effect */
     max-width: 300px;
+    /* Set maximum width */
     flex: 0 0 auto;
+    /* Disable growing and shrinking */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    /* Move card up on hover */
 }
 
 .project-card img {
     width: 100%;
+    /* Set image width to 100% */
     height: auto;
+    /* Maintain aspect ratio */
     max-width: 100%;
+    /* Limit image width to container width */
     max-height: 100%;
+    /* Limit image height to container height */
     object-fit: cover;
+    /* Cover image to fit container */
 }
 
+/* Styles for content within project cards */
 .project-card .card-content {
     padding: 20px;
+    /* Add padding inside card content */
 }
 
+/* Heading styles within project cards */
 .project-card h3 {
     margin-bottom: 10px;
+    /* Add space below heading */
     font-size: 20px;
+    /* Set font size */
     color: black;
+    /* Heading text color */
 }
 
+/* Paragraph styles within project cards */
 .project-card p {
     color: #555;
+    /* Text color */
     font-size: 16px;
+    /* Font size */
 }
 
 /* Horizontal scrolling */
 .show-projects {
     display: flex;
+    /* Use flexbox for layout */
     flex-wrap: nowrap;
+    /* Prevent wrapping of items */
     overflow-x: auto;
+    /* Enable horizontal scrolling */
 }
 
 /* Adjust spacing between project cards */
 .show-projects .project-card {
     margin-right: 10px;
+    /* Add margin to the right of each card */
 }
